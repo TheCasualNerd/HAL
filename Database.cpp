@@ -1,17 +1,13 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include <Database.h>
 
-using namespace std;
-class Database {
-public:
-    vector<string> questio; 
-    static constexpr string erthings[] = {'who', 'what', 'when', 'where', 'why', 'how', 'is', 'which', 'whose', 'whom', '\0'};
-    //string persona[9] = {'Dave', 'HAL', 'David Bowman', 'ship', 'Tycho', 'TMA', 'Frank', 'Frank Poole', 'Dr. Chandra', '\0'};
+Database::Database() {
+	Database::words = { "who", "what", "when", "where", "why", "how", "is", "which", "whose", "whom", "\0" };
+	Database::words1 = { "Dave", "Dave Bowman", "SAL", "TMA-1", "Tycho", "TMA-2", "Dr. Chandra", "Frank", "Frank Poole" };
 };
-int main() {
-
-    Database datab;
-    datab.questio.insert(datab.questio.end(), datab.erthings, 10);
-    cout << datab.questio[0];
-}
+Database::~Database() {
+	Database::words.resize(0);
+	Database::words1.resize(0);
+};
